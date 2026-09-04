@@ -1,0 +1,462 @@
+<title>Genevieve Moaalii</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Karla:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --ground:#EFF1EA;
+  --surface:#F8F9F4;
+  --surface-2:#E6EADD;
+  --ink:#16211D;
+  --ink-soft:#4C5A54;
+  --ink-faint:#77857E;
+  --rule:#D4DAC9;
+  --accent:#1F5F4E;
+  --accent-ink:#F8F9F4;
+  --accent-soft:#DDE9E2;
+  --warm:#C4721B;
+  --warm-soft:#F3E3CE;
+  --shadow:rgba(22,33,29,.10);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0E1513;
+    --surface:#161F1C;
+    --surface-2:#1E2A26;
+    --ink:#E9EDE6;
+    --ink-soft:#A3B2AA;
+    --ink-faint:#7C8A83;
+    --rule:#2A3733;
+    --accent:#63C6A8;
+    --accent-ink:#0E1513;
+    --accent-soft:#1A2F28;
+    --warm:#E8A44E;
+    --warm-soft:#2C2418;
+    --shadow:rgba(0,0,0,.45);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0E1513;
+  --surface:#161F1C;
+  --surface-2:#1E2A26;
+  --ink:#E9EDE6;
+  --ink-soft:#A3B2AA;
+  --ink-faint:#7C8A83;
+  --rule:#2A3733;
+  --accent:#63C6A8;
+  --accent-ink:#0E1513;
+  --accent-soft:#1A2F28;
+  --warm:#E8A44E;
+  --warm-soft:#2C2418;
+  --shadow:rgba(0,0,0,.45);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--ground);
+  color:var(--ink);
+  font-family:"Karla","Helvetica Neue",Arial,sans-serif;
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:"Fraunces",Georgia,"Times New Roman",serif;font-weight:600;text-wrap:balance;margin:0;line-height:1.08}
+p{margin:0}
+a{color:inherit}
+img{max-width:100%}
+
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+.eyebrow{
+  font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink-faint);
+}
+.rule{height:1px;background:var(--rule);border:0;margin:0}
+
+/* ---------- nav ---------- */
+.nav{
+  position:sticky;top:0;z-index:20;
+  background:color-mix(in srgb, var(--ground) 88%, transparent);
+  backdrop-filter:saturate(1.4) blur(10px);
+  border-bottom:1px solid var(--rule);
+}
+.nav-in{display:flex;align-items:center;gap:28px;padding:14px 28px;max-width:1080px;margin:0 auto}
+.mark{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:19px;letter-spacing:-.01em;text-decoration:none;margin-right:auto}
+.mark span{color:var(--accent)}
+.nav a.link{font-size:14px;font-weight:600;text-decoration:none;color:var(--ink-soft)}
+.nav a.link:hover{color:var(--accent)}
+@media (max-width:720px){.nav a.link{display:none}}
+
+.btn{
+  display:inline-block;text-decoration:none;font-weight:700;font-size:14px;
+  padding:11px 20px;border-radius:999px;
+  background:var(--accent);color:var(--accent-ink);
+  border:1px solid var(--accent);
+  transition:transform .15s ease, opacity .15s ease;
+}
+.btn:hover{transform:translateY(-1px);opacity:.92}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--rule)}
+.btn.ghost:hover{border-color:var(--accent);color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+/* ---------- hero ---------- */
+.hero{padding:76px 0 56px}
+.hero-grid{display:grid;grid-template-columns:1.35fr .95fr;gap:56px;align-items:end}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr;gap:36px;align-items:start}}
+h1{font-size:clamp(42px,7vw,76px);letter-spacing:-.025em}
+h1 em{font-style:italic;color:var(--accent)}
+.hero p.lede{margin-top:22px;font-size:19px;color:var(--ink-soft);max-width:52ch}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+
+.card-id{
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-radius:18px;
+  padding:26px;
+  box-shadow:0 18px 40px -28px var(--shadow);
+}
+.card-id dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:12px 18px;font-size:14px}
+.card-id dt{color:var(--ink-faint);font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:11px;padding-top:3px}
+.card-id dd{margin:0;font-weight:600}
+
+/* ---------- band ---------- */
+.band{background:var(--surface-2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.band-in{display:flex;flex-wrap:wrap;gap:10px 12px;align-items:center;padding:20px 28px;max-width:1080px;margin:0 auto}
+.chip{
+  font-size:13px;font-weight:600;padding:6px 14px;border-radius:999px;
+  background:var(--surface);border:1px solid var(--rule);
+}
+.chip.spec{background:transparent;color:var(--ink-faint);border-style:dashed}
+
+/* ---------- sections ---------- */
+section{padding:72px 0}
+.sec-head{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:34px}
+.sec-head h2{font-size:clamp(28px,4vw,40px);letter-spacing:-.02em}
+.sec-head .eyebrow{margin-left:auto}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+@media (max-width:820px){.two{grid-template-columns:1fr;gap:28px}}
+.prose p+p{margin-top:16px}
+.prose{color:var(--ink-soft);max-width:62ch}
+.prose strong{color:var(--ink)}
+
+/* deliverables list */
+.deliv{display:grid;gap:0;border-top:1px solid var(--rule)}
+.deliv-row{
+  display:grid;grid-template-columns:180px 1fr;gap:24px;
+  padding:22px 0;border-bottom:1px solid var(--rule);
+}
+@media (max-width:640px){.deliv-row{grid-template-columns:1fr;gap:8px}}
+.deliv-row h3{font-size:20px;letter-spacing:-.01em}
+.deliv-row p{color:var(--ink-soft);font-size:16px}
+
+/* categories */
+.cats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:820px){.cats{grid-template-columns:1fr}}
+.cat{
+  background:var(--surface);border:1px solid var(--rule);border-radius:16px;
+  padding:24px;display:flex;flex-direction:column;gap:10px;
+}
+.cat h3{font-size:21px}
+.cat p{font-size:15px;color:var(--ink-soft)}
+.cat .tag{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+
+/* work */
+.work{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media (max-width:820px){.work{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.work{grid-template-columns:1fr}}
+.tile{
+  background:var(--surface);border:1px solid var(--rule);border-radius:16px;overflow:hidden;
+  display:flex;flex-direction:column;text-decoration:none;
+  transition:transform .18s ease, border-color .18s ease;
+}
+.tile:hover{transform:translateY(-3px);border-color:var(--accent)}
+.tile .frame{
+  aspect-ratio:9/16;background:
+    linear-gradient(160deg, var(--accent-soft), var(--surface-2));
+  display:flex;align-items:center;justify-content:center;
+  border-bottom:1px solid var(--rule);
+}
+.tile .frame span{
+  font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-faint);border:1px dashed var(--rule);padding:8px 12px;border-radius:8px;
+}
+.tile .meta{padding:16px 18px 18px;display:flex;flex-direction:column;gap:6px}
+.tile .meta strong{font-size:16px}
+.tile .meta small{font-size:13px;color:var(--ink-faint)}
+
+/* rates */
+.rates{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media (max-width:820px){.rates{grid-template-columns:1fr}}
+.rate{
+  border:1px solid var(--rule);border-radius:18px;padding:26px;
+  background:var(--surface);display:flex;flex-direction:column;gap:14px;
+}
+.rate.feature{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.rate.feature .price,.rate.feature h3{color:var(--accent-ink)}
+.rate.feature li{color:var(--accent-ink);opacity:.92}
+.rate.feature .rate-note{color:var(--accent-ink);opacity:.8}
+.rate h3{font-size:20px}
+.price{font-family:"Fraunces",Georgia,serif;font-size:36px;font-weight:600;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.price small{font-size:14px;font-family:"Karla",sans-serif;font-weight:600;color:inherit;opacity:.7}
+.rate ul{margin:0;padding:0;list-style:none;display:grid;gap:9px;font-size:15px;color:var(--ink-soft)}
+.rate li{display:flex;gap:10px;align-items:flex-start}
+.rate li::before{content:"—";opacity:.55;flex:none}
+.rate-note{font-size:13px;color:var(--ink-faint);margin-top:auto}
+
+/* contact */
+.contact{
+  background:var(--surface);border:1px solid var(--rule);border-radius:22px;
+  padding:44px;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;
+}
+@media (max-width:760px){.contact{grid-template-columns:1fr;padding:30px}}
+.contact h2{font-size:clamp(26px,4vw,38px);letter-spacing:-.02em}
+.contact p{color:var(--ink-soft);margin-top:12px;max-width:46ch}
+
+footer{border-top:1px solid var(--rule);padding:30px 0 46px;color:var(--ink-faint);font-size:14px}
+.foot-in{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.foot-in a{text-decoration:none;font-weight:600;color:var(--ink-soft)}
+.foot-in a:hover{color:var(--accent)}
+.foot-in .sp{margin-left:auto}
+
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="mark" href="#top">Genevieve<span>.</span></a>
+    <a class="link" href="#about">About</a>
+    <a class="link" href="#deliver">What I deliver</a>
+    <a class="link" href="#work">Work</a>
+    <a class="link" href="#rates">Rates</a>
+    <a class="btn" href="#contact">Start a project</a>
+  </div>
+</nav>
+
+<div id="top"></div>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">UGC Creator &middot; Utah</p>
+      <h1 style="margin-top:16px">Short-form video that sounds like a <em>real mom</em>, because one made it.</h1>
+      <p class="lede">I'm Genevieve — a Samoan mom of six, homeschooling in Utah, filming honest short-form content for brands in kids &amp; family, home &amp; cleaning, and health &amp; beauty. You get the footage; you keep the rights.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#contact">Start a project</a>
+        <a class="btn ghost" href="#work">See recent work</a>
+      </div>
+    </div>
+    <aside class="card-id">
+      <dl>
+        <dt>Based in</dt><dd>Utah, USA</dd>
+        <dt>Formats</dt><dd>TikTok &amp; IG Reels, 9:16</dd>
+        <dt>Delivery</dt><dd>Raw + edited, hooks &amp; variations</dd>
+        <dt>On camera</dt><dd>Me, my six kids, our dog</dd>
+        <dt>Usage</dt><dd>Paid social &amp; whitelisting available</dd>
+      </dl>
+    </aside>
+  </div>
+</header>
+
+<div class="band">
+  <div class="band-in">
+    <span class="eyebrow" style="margin-right:6px">Created for</span>
+    <span class="chip">Hiya</span>
+    <span class="chip spec">Re-Lyte &middot; concept</span>
+    <span class="chip spec">Bloom &middot; concept</span>
+    <span class="chip spec">Your brand next</span>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap two">
+    <div>
+      <p class="eyebrow">About</p>
+      <h2 style="font-size:clamp(28px,4vw,40px);margin-top:12px;letter-spacing:-.02em">The camera is already on in this house.</h2>
+    </div>
+    <div class="prose">
+      <p>Six kids, a homeschool schedule, and a kitchen that never fully stays clean — which turns out to be exactly the room your product has to survive. I don't stage a version of family life for the shot. I film the one already happening and let the product earn its place in it.</p>
+      <p>I also run <strong>Little Popo</strong>, a children's activewear brand I built from scratch. That means I read a creative brief the way a brand owner does: I know what a hook has to do, why the first three seconds decide everything, and what a founder needs back from a creator to actually use the video.</p>
+      <p>My content lands hardest with moms — the beginner at the gym, the woman rebuilding confidence, the parent doing it with a full house. If that's who you're selling to, we speak the same language.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="deliver">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Services</p>
+        <h2 style="margin-top:10px">What I deliver</h2>
+      </div>
+    </div>
+    <div class="deliv">
+      <div class="deliv-row">
+        <h3>Concept &amp; script</h3>
+        <p>I write to your brief, not around it — hook, problem, product moment, close. You approve the script before I ever hit record, so there are no surprises at delivery.</p>
+      </div>
+      <div class="deliv-row">
+        <h3>Filming</h3>
+        <p>Vertical 9:16, natural light, real rooms. Face-to-camera, voiceover, hands-only demo, or a mix — whichever the format calls for. Kids and pets on camera with full permission.</p>
+      </div>
+      <div class="deliv-row">
+        <h3>Editing</h3>
+        <p>Cut, captioned, and paced for the feed. You get the edited video plus the raw clips, so your team can recut for other placements without booking a reshoot.</p>
+      </div>
+      <div class="deliv-row">
+        <h3>Hook variations</h3>
+        <p>The same body, three different openings. Cheapest possible way to find out which angle your audience actually stops for before you scale spend.</p>
+      </div>
+      <div class="deliv-row">
+        <h3>Usage rights</h3>
+        <p>Organic use included. Paid social, whitelisting, and extended-term licenses are available as add-ons — priced up front, no renegotiation mid-campaign.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="categories">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Categories</p>
+        <h2 style="margin-top:10px">Where I'm the right fit</h2>
+      </div>
+    </div>
+    <div class="cats">
+      <div class="cat">
+        <span class="tag">01 — Kids &amp; family</span>
+        <h3>Products that get used by actual children</h3>
+        <p>Vitamins, snacks, clothing, toys, gear. Six kids across a wide age range means real reactions, real mess, and honest before-and-after.</p>
+      </div>
+      <div class="cat">
+        <span class="tag">02 — Home &amp; cleaning</span>
+        <h3>The mess is already here</h3>
+        <p>Cleaners, organization, laundry, kitchen. A big family generates the exact chaos your product claims to solve — no set dressing required.</p>
+      </div>
+      <div class="cat">
+        <span class="tag">03 — Health &amp; beauty</span>
+        <h3>Beginner, not influencer</h3>
+        <p>Electrolytes, supplements, skincare, fitness. I'm early in my own journey, which makes the testimonial believable to the customer who is too.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Portfolio</p>
+        <h2 style="margin-top:10px">Recent work</h2>
+      </div>
+      <p class="eyebrow">Vertical &middot; 9:16</p>
+    </div>
+    <div class="work">
+      <a class="tile" href="#contact">
+        <div class="frame"><span>Add video</span></div>
+        <div class="meta"><strong>Hiya</strong><small>Children's vitamins &middot; face-to-camera</small></div>
+      </a>
+      <a class="tile" href="#contact">
+        <div class="frame"><span>Add video</span></div>
+        <div class="meta"><strong>Re-Lyte</strong><small>Electrolytes &middot; concept video</small></div>
+      </a>
+      <a class="tile" href="#contact">
+        <div class="frame"><span>Add video</span></div>
+        <div class="meta"><strong>Bloom</strong><small>Energy drink &middot; concept video</small></div>
+      </a>
+      <a class="tile" href="#contact">
+        <div class="frame"><span>Add video</span></div>
+        <div class="meta"><strong>Compression socks</strong><small>Voiceover &middot; product demo</small></div>
+      </a>
+      <a class="tile" href="#contact">
+        <div class="frame"><span>Add video</span></div>
+        <div class="meta"><strong>Little Popo</strong><small>Founder story &middot; brand film</small></div>
+      </a>
+      <a class="tile" href="#contact">
+        <div class="frame"><span>Add video</span></div>
+        <div class="meta"><strong>Your brand</strong><small>Booking now</small></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="rates">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Rates</p>
+        <h2 style="margin-top:10px">Packages</h2>
+      </div>
+      <p class="eyebrow">Organic usage included</p>
+    </div>
+    <div class="rates">
+      <div class="rate">
+        <h3>Single video</h3>
+        <p class="price">$150<small> / video</small></p>
+        <ul>
+          <li>One scripted 15–30s vertical video</li>
+          <li>Edited &amp; captioned, plus raw footage</li>
+          <li>One round of revisions</li>
+        </ul>
+        <p class="rate-note">Best for testing a new creator.</p>
+      </div>
+      <div class="rate feature">
+        <h3>Three-video bundle</h3>
+        <p class="price">$400<small> / bundle</small></p>
+        <ul>
+          <li>Three videos, three distinct angles</li>
+          <li>Three hook variations included</li>
+          <li>Edited, captioned, raw footage delivered</li>
+          <li>One round of revisions per video</li>
+        </ul>
+        <p class="rate-note">Most brands start here — enough variety to actually test.</p>
+      </div>
+      <div class="rate">
+        <h3>Monthly retainer</h3>
+        <p class="price">$1,200<small> / month</small></p>
+        <ul>
+          <li>Six videos per month</li>
+          <li>Priority scheduling and faster turnaround</li>
+          <li>Ongoing hook testing against your results</li>
+        </ul>
+        <p class="rate-note">For brands running paid social continuously.</p>
+      </div>
+    </div>
+    <p class="prose" style="margin-top:24px;font-size:15px">Add-ons: paid social usage, whitelisting, extended licensing, and rush turnaround. Gifted-only collaborations are considered case by case for brands that are a strong fit.</p>
+  </div>
+</section>
+
+<section id="contact" style="padding-top:16px">
+  <div class="wrap">
+    <div class="contact">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2 style="margin-top:12px">Tell me about your product.</h2>
+        <p>Send the product, the audience, and what you want the video to do. I'll come back with a concept and a quote — usually within two business days.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <a class="btn" href="mailto:hello@genevievemoaalii.com?subject=UGC%20project%20inquiry">hello@genevievemoaalii.com</a>
+        <a class="btn ghost" href="https://www.instagram.com/" rel="noopener">Message on Instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <span>&copy; 2026 Genevieve Moaalii</span>
+    <span class="sp"></span>
+    <a href="https://www.tiktok.com/" rel="noopener">TikTok</a>
+    <a href="https://www.instagram.com/" rel="noopener">Instagram</a>
+    <a href="https://shoplittlepopo.com" rel="noopener">Little Popo</a>
+  </div>
+</footer>
