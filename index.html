@@ -182,21 +182,36 @@ section{padding:72px 0}
 @media (max-width:820px){.work{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:520px){.work{grid-template-columns:1fr}}
 .tile{
-  background:var(--surface);border:1px solid var(--rule);border-radius:16px;overflow:hidden;
-  display:flex;flex-direction:column;text-decoration:none;
+  margin:0;background:var(--surface);border:1px solid var(--rule);border-radius:16px;overflow:hidden;
+  display:flex;flex-direction:column;
   transition:transform .18s ease, border-color .18s ease;
 }
 .tile:hover{transform:translateY(-3px);border-color:var(--accent)}
 .tile .frame{
+  position:relative;
   aspect-ratio:9/16;background:
     linear-gradient(160deg, var(--accent-soft), var(--surface-2));
   display:flex;align-items:center;justify-content:center;
   border-bottom:1px solid var(--rule);
 }
-.tile .frame span{
+.tile .frame video{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;display:none;background:#000;
+}
+.tile.has-video .frame video{display:block}
+.tile.has-video .ph{display:none}
+.tile .ph{
   font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
   color:var(--ink-faint);border:1px dashed var(--rule);padding:8px 12px;border-radius:8px;
 }
+.tile .sound{
+  display:none;position:absolute;right:10px;bottom:10px;z-index:2;
+  font:inherit;font-size:11px;font-weight:700;letter-spacing:.06em;
+  padding:6px 11px;border-radius:999px;cursor:pointer;
+  background:rgba(0,0,0,.55);color:#fff;border:0;backdrop-filter:blur(4px);
+}
+.tile.has-video .sound{display:block}
+.tile .sound:hover{background:rgba(0,0,0,.75)}
 .tile .meta{padding:16px 18px 18px;display:flex;flex-direction:column;gap:6px}
 .tile .meta strong{font-size:16px}
 .tile .meta small{font-size:13px;color:var(--ink-faint)}
@@ -262,7 +277,7 @@ footer{border-top:1px solid var(--rule);padding:30px 0 46px;color:var(--ink-fain
     <div>
       <p class="eyebrow">UGC Creator &middot; Utah</p>
       <h1 style="margin-top:16px">Short-form video that sounds like a <em>real mom</em>, because one made it.</h1>
-      <p class="lede">I'm Genevieve, a mom of six, homeschooling in Utah, filming honest short-form content for brands in kids &amp; family, home &amp; cleaning, and health &amp; beauty. You get the footage; you keep the rights.</p>
+      <p class="lede">I'm Genevieve, a wife and mom of six, homeschooling in Utah, filming honest short-form content for brands in kids &amp; family, home &amp; cleaning, and health &amp; beauty. You get the footage; you keep the rights.</p>
       <div class="hero-cta">
         <a class="btn" href="#contact">Start a project</a>
         <a class="btn ghost" href="#work">See recent work</a>
@@ -378,30 +393,54 @@ footer{border-top:1px solid var(--rule);padding:30px 0 46px;color:var(--ink-fain
       <p class="eyebrow">Vertical &middot; 9:16</p>
     </div>
     <div class="work">
-      <a class="tile" href="#contact">
-        <div class="frame"><span>Add video</span></div>
-        <div class="meta"><strong>Hiya</strong><small>Children's vitamins &middot; face-to-camera</small></div>
-      </a>
-      <a class="tile" href="#contact">
-        <div class="frame"><span>Add video</span></div>
-        <div class="meta"><strong>Re-Lyte</strong><small>Electrolytes &middot; concept video</small></div>
-      </a>
-      <a class="tile" href="#contact">
-        <div class="frame"><span>Add video</span></div>
-        <div class="meta"><strong>Bloom</strong><small>Energy drink &middot; concept video</small></div>
-      </a>
-      <a class="tile" href="#contact">
-        <div class="frame"><span>Add video</span></div>
-        <div class="meta"><strong>Compression socks</strong><small>Voiceover &middot; product demo</small></div>
-      </a>
-      <a class="tile" href="#contact">
-        <div class="frame"><span>Add video</span></div>
-        <div class="meta"><strong>Kids &amp; family</strong><small>Concept video &middot; voiceover</small></div>
-      </a>
-      <a class="tile" href="#contact">
-        <div class="frame"><span>Add video</span></div>
-        <div class="meta"><strong>Your brand</strong><small>Booking now</small></div>
-      </a>
+      <figure class="tile">
+        <div class="frame">
+          <video src="videos/video1.mp4" muted loop playsinline preload="metadata"></video>
+          <span class="ph">Add video</span>
+          <button class="sound" type="button" aria-label="Toggle sound">Sound off</button>
+        </div>
+        <figcaption class="meta"><strong>Hiya</strong><small>Children's vitamins &middot; face-to-camera</small></figcaption>
+      </figure>
+      <figure class="tile">
+        <div class="frame">
+          <video src="videos/video2.mp4" muted loop playsinline preload="metadata"></video>
+          <span class="ph">Add video</span>
+          <button class="sound" type="button" aria-label="Toggle sound">Sound off</button>
+        </div>
+        <figcaption class="meta"><strong>Re-Lyte</strong><small>Electrolytes &middot; concept video</small></figcaption>
+      </figure>
+      <figure class="tile">
+        <div class="frame">
+          <video src="videos/video3.mp4" muted loop playsinline preload="metadata"></video>
+          <span class="ph">Add video</span>
+          <button class="sound" type="button" aria-label="Toggle sound">Sound off</button>
+        </div>
+        <figcaption class="meta"><strong>Bloom</strong><small>Energy drink &middot; concept video</small></figcaption>
+      </figure>
+      <figure class="tile">
+        <div class="frame">
+          <video src="videos/video4.mp4" muted loop playsinline preload="metadata"></video>
+          <span class="ph">Add video</span>
+          <button class="sound" type="button" aria-label="Toggle sound">Sound off</button>
+        </div>
+        <figcaption class="meta"><strong>Compression socks</strong><small>Voiceover &middot; product demo</small></figcaption>
+      </figure>
+      <figure class="tile">
+        <div class="frame">
+          <video src="videos/video5.mp4" muted loop playsinline preload="metadata"></video>
+          <span class="ph">Add video</span>
+          <button class="sound" type="button" aria-label="Toggle sound">Sound off</button>
+        </div>
+        <figcaption class="meta"><strong>Kids &amp; family</strong><small>Concept video &middot; voiceover</small></figcaption>
+      </figure>
+      <figure class="tile">
+        <div class="frame">
+          <video src="videos/video6.mp4" muted loop playsinline preload="metadata"></video>
+          <span class="ph">Add video</span>
+          <button class="sound" type="button" aria-label="Toggle sound">Sound off</button>
+        </div>
+        <figcaption class="meta"><strong>Your brand</strong><small>Booking now</small></figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -478,3 +517,31 @@ footer{border-top:1px solid var(--rule);padding:30px 0 46px;color:var(--ink-fain
     <a class="social" href="https://www.instagram.com/genevieve.moaalii/" rel="noopener" aria-label="Instagram, @genevieve.moaalii"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 5.68a4.16 4.16 0 100 8.32 4.16 4.16 0 000-8.32zm0 6.86a2.7 2.7 0 110-5.4 2.7 2.7 0 010 5.4zm5.3-7.03a.97.97 0 11-1.94 0 .97.97 0 011.94 0z"/></svg>@genevieve.moaalii</a>
   </div>
 </footer>
+
+<script>
+(function(){
+  var tiles = document.querySelectorAll('.tile');
+  tiles.forEach(function(tile){
+    var v = tile.querySelector('video');
+    if(!v) return;
+    v.addEventListener('loadeddata', function(){ tile.classList.add('has-video'); });
+    v.addEventListener('error', function(){ tile.classList.remove('has-video'); });
+    var btn = tile.querySelector('.sound');
+    btn.addEventListener('click', function(){
+      v.muted = !v.muted;
+      btn.textContent = v.muted ? 'Sound off' : 'Sound on';
+      if(!v.muted){ v.play(); }
+    });
+  });
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        var v = e.target.querySelector('video');
+        if(!v || !e.target.classList.contains('has-video')) return;
+        if(e.isIntersecting){ v.play().catch(function(){}); } else { v.pause(); }
+      });
+    }, {threshold:0.25});
+    tiles.forEach(function(t){ io.observe(t); });
+  }
+})();
+</script>
