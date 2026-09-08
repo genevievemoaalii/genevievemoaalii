@@ -178,9 +178,9 @@ section{padding:72px 0}
 .cat .tag{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
 
 /* work */
-.work{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-@media (max-width:820px){.work{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:520px){.work{grid-template-columns:1fr}}
+.work{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media (max-width:900px){.work{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:640px){.work{grid-template-columns:repeat(2,1fr);gap:12px}}
 .tile{
   margin:0;background:var(--surface);border:1px solid var(--rule);border-radius:16px;overflow:hidden;
   display:flex;flex-direction:column;
@@ -212,9 +212,9 @@ section{padding:72px 0}
 }
 .tile.has-video .sound{display:block}
 .tile .sound:hover{background:rgba(0,0,0,.75)}
-.tile .meta{padding:16px 18px 18px;display:flex;flex-direction:column;gap:6px}
-.tile .meta strong{font-size:16px}
-.tile .meta small{font-size:13px;color:var(--ink-faint)}
+.tile .meta{padding:13px 14px 15px;display:flex;flex-direction:column;gap:6px}
+.tile .meta strong{font-size:15px}
+.tile .meta small{font-size:12px;color:var(--ink-faint)}
 
 /* rates */
 .rates{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -395,51 +395,67 @@ footer{border-top:1px solid var(--rule);padding:30px 0 46px;color:var(--ink-fain
     <div class="work">
       <figure class="tile">
         <div class="frame">
-          <video src="videos/video1.mp4" muted loop playsinline preload="metadata"></video>
+          <video src="hiya.mp4" muted loop playsinline preload="metadata"></video>
           <span class="ph">Add video</span>
           <button class="sound" type="button" aria-label="Toggle sound">Sound off</button>
         </div>
-        <figcaption class="meta"><strong>Hiya</strong><small>Children's vitamins &middot; face-to-camera</small></figcaption>
+        <figcaption class="meta"><strong>Hiya</strong><small>Children's vitamins</small></figcaption>
       </figure>
       <figure class="tile">
         <div class="frame">
-          <video src="videos/video2.mp4" muted loop playsinline preload="metadata"></video>
+          <video src="woofugc2.mp4" muted loop playsinline preload="metadata"></video>
           <span class="ph">Add video</span>
           <button class="sound" type="button" aria-label="Toggle sound">Sound off</button>
         </div>
-        <figcaption class="meta"><strong>Re-Lyte</strong><small>Electrolytes &middot; concept video</small></figcaption>
+        <figcaption class="meta"><strong>Dr. Woof</strong><small>Compression socks &middot; product demo</small></figcaption>
       </figure>
       <figure class="tile">
         <div class="frame">
-          <video src="videos/video3.mp4" muted loop playsinline preload="metadata"></video>
+          <video src="sunscreenRL.MOV" muted loop playsinline preload="metadata"></video>
           <span class="ph">Add video</span>
           <button class="sound" type="button" aria-label="Toggle sound">Sound off</button>
         </div>
-        <figcaption class="meta"><strong>Bloom</strong><small>Energy drink &middot; concept video</small></figcaption>
+        <figcaption class="meta"><strong>Round Lab</strong><small>Sunscreen &middot; product demo</small></figcaption>
       </figure>
       <figure class="tile">
         <div class="frame">
-          <video src="videos/video4.mp4" muted loop playsinline preload="metadata"></video>
+          <video src="relyte.mp4" muted loop playsinline preload="metadata"></video>
           <span class="ph">Add video</span>
           <button class="sound" type="button" aria-label="Toggle sound">Sound off</button>
         </div>
-        <figcaption class="meta"><strong>Compression socks</strong><small>Voiceover &middot; product demo</small></figcaption>
+        <figcaption class="meta"><strong>Re-Lyte</strong><small>Electrolytes</small></figcaption>
       </figure>
       <figure class="tile">
         <div class="frame">
-          <video src="videos/video5.mp4" muted loop playsinline preload="metadata"></video>
+          <video src="babyquip.MOV" muted loop playsinline preload="metadata"></video>
           <span class="ph">Add video</span>
           <button class="sound" type="button" aria-label="Toggle sound">Sound off</button>
         </div>
-        <figcaption class="meta"><strong>Kids &amp; family</strong><small>Concept video &middot; voiceover</small></figcaption>
+        <figcaption class="meta"><strong>BabyQuip</strong><small>Baby gear &middot; kids &amp; family</small></figcaption>
       </figure>
       <figure class="tile">
         <div class="frame">
-          <video src="videos/video6.mp4" muted loop playsinline preload="metadata"></video>
+          <video src="sukiya.mp4" muted loop playsinline preload="metadata"></video>
           <span class="ph">Add video</span>
           <button class="sound" type="button" aria-label="Toggle sound">Sound off</button>
         </div>
-        <figcaption class="meta"><strong>Your brand</strong><small>Booking now</small></figcaption>
+        <figcaption class="meta"><strong>Sukiya</strong><small>Local restaurant &middot; food &amp; dining</small></figcaption>
+      </figure>
+      <figure class="tile">
+        <div class="frame">
+          <video src="grwm-compressed.mp4" muted loop playsinline preload="metadata"></video>
+          <span class="ph">Add video</span>
+          <button class="sound" type="button" aria-label="Toggle sound">Sound off</button>
+        </div>
+        <figcaption class="meta"><strong>Get ready with me</strong><small>Health &amp; beauty</small></figcaption>
+      </figure>
+      <figure class="tile">
+        <div class="frame">
+          <video src="DISNEYLAND.mp4" muted loop playsinline preload="metadata"></video>
+          <span class="ph">Add video</span>
+          <button class="sound" type="button" aria-label="Toggle sound">Sound off</button>
+        </div>
+        <figcaption class="meta"><strong>Disneyland</strong><small>Family travel &middot; lifestyle</small></figcaption>
       </figure>
     </div>
   </div>
@@ -522,23 +538,31 @@ footer{border-top:1px solid var(--rule);padding:30px 0 46px;color:var(--ink-fain
   tiles.forEach(function(tile){
     var v = tile.querySelector('video');
     if(!v) return;
-    v.addEventListener('loadeddata', function(){ tile.classList.add('has-video'); });
-    v.addEventListener('error', function(){ tile.classList.remove('has-video'); });
-    var btn = tile.querySelector('.sound');
-    btn.addEventListener('click', function(){
-      v.muted = !v.muted;
-      btn.textContent = v.muted ? 'Sound off' : 'Sound on';
-      if(!v.muted){ v.play(); }
+    function reveal(){ tile.classList.add('has-video'); }
+    if(v.readyState >= 1){ reveal(); }
+    v.addEventListener('loadedmetadata', reveal);
+    v.addEventListener('canplay', reveal);
+    v.addEventListener('error', function(){
+      tile.classList.remove('has-video');
+      tile.classList.add('no-video');
     });
+    var btn = tile.querySelector('.sound');
+    if(btn){
+      btn.addEventListener('click', function(){
+        v.muted = !v.muted;
+        btn.textContent = v.muted ? 'Sound off' : 'Sound on';
+        if(!v.muted){ v.play().catch(function(){}); }
+      });
+    }
   });
   if('IntersectionObserver' in window){
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(e){
         var v = e.target.querySelector('video');
-        if(!v || !e.target.classList.contains('has-video')) return;
+        if(!v) return;
         if(e.isIntersecting){ v.play().catch(function(){}); } else { v.pause(); }
       });
-    }, {threshold:0.25});
+    }, {threshold:0.2});
     tiles.forEach(function(t){ io.observe(t); });
   }
 })();
