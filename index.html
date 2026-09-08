@@ -196,7 +196,7 @@ section{padding:72px 0}
 }
 .tile .frame video{
   position:absolute;inset:0;width:100%;height:100%;
-  object-fit:cover;display:none;background:#000;
+  object-fit:cover;display:none;background:#000;cursor:pointer;
 }
 .tile.has-video .frame video{display:block}
 .tile.has-video .ph{display:none}
@@ -204,14 +204,19 @@ section{padding:72px 0}
   font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
   color:var(--ink-faint);border:1px dashed var(--rule);padding:8px 12px;border-radius:8px;
 }
-.tile .sound{
-  display:none;position:absolute;right:10px;bottom:10px;z-index:2;
-  font:inherit;font-size:11px;font-weight:700;letter-spacing:.06em;
-  padding:6px 11px;border-radius:999px;cursor:pointer;
-  background:rgba(0,0,0,.55);color:#fff;border:0;backdrop-filter:blur(4px);
+.tile .play{
+  display:none;position:absolute;left:50%;top:50%;z-index:2;
+  transform:translate(-50%,-50%);
+  width:52px;height:52px;border-radius:999px;border:0;cursor:pointer;
+  background:rgba(0,0,0,.5);backdrop-filter:blur(4px);
+  align-items:center;justify-content:center;
+  transition:background .15s ease, transform .15s ease;
 }
-.tile.has-video .sound{display:block}
-.tile .sound:hover{background:rgba(0,0,0,.75)}
+.tile.has-video .play{display:flex}
+.tile.playing .play{opacity:0;pointer-events:none}
+.tile.playing:hover .play{opacity:1;pointer-events:auto}
+.tile .play svg{width:22px;height:22px;fill:#fff;margin-left:2px}
+.tile .play:hover{background:rgba(0,0,0,.72);transform:translate(-50%,-50%) scale(1.06)}
 .tile .meta{padding:13px 14px 15px;display:flex;flex-direction:column;gap:6px}
 .tile .meta strong{font-size:15px}
 .tile .meta small{font-size:12px;color:var(--ink-faint)}
@@ -395,65 +400,81 @@ footer{border-top:1px solid var(--rule);padding:30px 0 46px;color:var(--ink-fain
     <div class="work">
       <figure class="tile">
         <div class="frame">
-          <video src="hiya.mp4" muted loop playsinline preload="metadata"></video>
+          <video src="hiya.mp4#t=0.1" playsinline preload="metadata"></video>
           <span class="ph">Add video</span>
-          <button class="sound" type="button" aria-label="Toggle sound">Sound off</button>
+          <button class="play" type="button" aria-label="Play Hiya">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.2v13.6L19 12z"/></svg>
+          </button>
         </div>
         <figcaption class="meta"><strong>Hiya</strong><small>Children's vitamins</small></figcaption>
       </figure>
       <figure class="tile">
         <div class="frame">
-          <video src="woofugc2.mp4" muted loop playsinline preload="metadata"></video>
+          <video src="woofugc2.mp4#t=0.1" playsinline preload="metadata"></video>
           <span class="ph">Add video</span>
-          <button class="sound" type="button" aria-label="Toggle sound">Sound off</button>
+          <button class="play" type="button" aria-label="Play Dr. Woof">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.2v13.6L19 12z"/></svg>
+          </button>
         </div>
         <figcaption class="meta"><strong>Dr. Woof</strong><small>Compression socks &middot; product demo</small></figcaption>
       </figure>
       <figure class="tile">
         <div class="frame">
-          <video src="sunscreenRL.MOV" muted loop playsinline preload="metadata"></video>
+          <video src="sunscreenRL.MOV#t=0.1" playsinline preload="metadata"></video>
           <span class="ph">Add video</span>
-          <button class="sound" type="button" aria-label="Toggle sound">Sound off</button>
+          <button class="play" type="button" aria-label="Play Round Lab">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.2v13.6L19 12z"/></svg>
+          </button>
         </div>
         <figcaption class="meta"><strong>Round Lab</strong><small>Sunscreen &middot; product demo</small></figcaption>
       </figure>
       <figure class="tile">
         <div class="frame">
-          <video src="relyte.mp4" muted loop playsinline preload="metadata"></video>
+          <video src="relyte.mp4#t=0.1" playsinline preload="metadata"></video>
           <span class="ph">Add video</span>
-          <button class="sound" type="button" aria-label="Toggle sound">Sound off</button>
+          <button class="play" type="button" aria-label="Play Re-Lyte">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.2v13.6L19 12z"/></svg>
+          </button>
         </div>
         <figcaption class="meta"><strong>Re-Lyte</strong><small>Electrolytes</small></figcaption>
       </figure>
       <figure class="tile">
         <div class="frame">
-          <video src="babyquip.MOV" muted loop playsinline preload="metadata"></video>
+          <video src="babyquip.MOV#t=0.1" playsinline preload="metadata"></video>
           <span class="ph">Add video</span>
-          <button class="sound" type="button" aria-label="Toggle sound">Sound off</button>
+          <button class="play" type="button" aria-label="Play BabyQuip">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.2v13.6L19 12z"/></svg>
+          </button>
         </div>
         <figcaption class="meta"><strong>BabyQuip</strong><small>Baby gear &middot; kids &amp; family</small></figcaption>
       </figure>
       <figure class="tile">
         <div class="frame">
-          <video src="sukiya.mp4" muted loop playsinline preload="metadata"></video>
+          <video src="sukiya.mp4#t=0.1" playsinline preload="metadata"></video>
           <span class="ph">Add video</span>
-          <button class="sound" type="button" aria-label="Toggle sound">Sound off</button>
+          <button class="play" type="button" aria-label="Play Sukiya">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.2v13.6L19 12z"/></svg>
+          </button>
         </div>
         <figcaption class="meta"><strong>Sukiya</strong><small>Local restaurant &middot; food &amp; dining</small></figcaption>
       </figure>
       <figure class="tile">
         <div class="frame">
-          <video src="grwm-compressed.mp4" muted loop playsinline preload="metadata"></video>
+          <video src="grwm-compressed.mp4#t=0.1" playsinline preload="metadata"></video>
           <span class="ph">Add video</span>
-          <button class="sound" type="button" aria-label="Toggle sound">Sound off</button>
+          <button class="play" type="button" aria-label="Play Get ready with me">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.2v13.6L19 12z"/></svg>
+          </button>
         </div>
         <figcaption class="meta"><strong>Get ready with me</strong><small>Health &amp; beauty</small></figcaption>
       </figure>
       <figure class="tile">
         <div class="frame">
-          <video src="DISNEYLAND.mp4" muted loop playsinline preload="metadata"></video>
+          <video src="DISNEYLAND.mp4#t=0.1" playsinline preload="metadata"></video>
           <span class="ph">Add video</span>
-          <button class="sound" type="button" aria-label="Toggle sound">Sound off</button>
+          <button class="play" type="button" aria-label="Play Disneyland">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.2v13.6L19 12z"/></svg>
+          </button>
         </div>
         <figcaption class="meta"><strong>Disneyland</strong><small>Family travel &middot; lifestyle</small></figcaption>
       </figure>
@@ -534,7 +555,7 @@ footer{border-top:1px solid var(--rule);padding:30px 0 46px;color:var(--ink-fain
 
 <script>
 (function(){
-  var tiles = document.querySelectorAll('.tile');
+  var tiles = Array.prototype.slice.call(document.querySelectorAll('.tile'));
   tiles.forEach(function(tile){
     var v = tile.querySelector('video');
     if(!v) return;
@@ -542,28 +563,28 @@ footer{border-top:1px solid var(--rule);padding:30px 0 46px;color:var(--ink-fain
     if(v.readyState >= 1){ reveal(); }
     v.addEventListener('loadedmetadata', reveal);
     v.addEventListener('canplay', reveal);
-    v.addEventListener('error', function(){
-      tile.classList.remove('has-video');
-      tile.classList.add('no-video');
-    });
-    var btn = tile.querySelector('.sound');
-    if(btn){
-      btn.addEventListener('click', function(){
-        v.muted = !v.muted;
-        btn.textContent = v.muted ? 'Sound off' : 'Sound on';
-        if(!v.muted){ v.play().catch(function(){}); }
-      });
+    v.addEventListener('error', function(){ tile.classList.remove('has-video'); });
+
+    function toggle(){
+      if(v.paused){
+        tiles.forEach(function(t){
+          var o = t.querySelector('video');
+          if(o && o !== v){ o.pause(); }
+        });
+        v.play().catch(function(){});
+      } else {
+        v.pause();
+      }
     }
+    var btn = tile.querySelector('.play');
+    if(btn){ btn.addEventListener('click', toggle); }
+    v.addEventListener('click', toggle);
+    v.addEventListener('play', function(){ tile.classList.add('playing'); });
+    v.addEventListener('pause', function(){ tile.classList.remove('playing'); });
+    v.addEventListener('ended', function(){
+      tile.classList.remove('playing');
+      v.currentTime = 0;
+    });
   });
-  if('IntersectionObserver' in window){
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        var v = e.target.querySelector('video');
-        if(!v) return;
-        if(e.isIntersecting){ v.play().catch(function(){}); } else { v.pause(); }
-      });
-    }, {threshold:0.2});
-    tiles.forEach(function(t){ io.observe(t); });
-  }
 })();
 </script>
