@@ -171,16 +171,12 @@ section{padding:72px 0}
 .prose{color:var(--ink-soft);max-width:62ch}
 .prose strong{color:var(--ink)}
 
-/* about bullets */
-.facts{margin:0;padding:0;list-style:none;display:grid;gap:16px}
-.facts li{
-  display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;
-  font-size:19px;font-weight:600;color:var(--ink);
-}
-.facts li::before{
-  content:"";width:9px;height:9px;margin-top:11px;border-radius:2px;
-  background:var(--accent);flex:none;
-}
+/* about */
+.about-in{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+@media (max-width:820px){.about-in{grid-template-columns:1fr;gap:18px}}
+.about-in .intro{font-size:19px;color:var(--ink-soft);max-width:40ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chips span{font-size:14px;font-weight:600;padding:7px 14px;border-radius:999px;background:var(--accent-soft);color:var(--ink)}
 
 /* categories */
 .cats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -340,7 +336,7 @@ footer{border-top:1px solid var(--rule);padding:30px 0 46px;color:var(--ink-fain
         <dt>Based in</dt><dd>Utah, USA</dd>
         <dt>Categories</dt><dd>Kids &amp; family, lifestyle, health &amp; beauty</dd>
         <dt>Format</dt><dd>Face to camera and voiceover</dd>
-        <dt>Kids on camera</dt><dd>Hands, backs, and side angles, no faces</dd>
+        <dt>Kids on camera</dt><dd>Faces case by case</dd>
         <dt>Platforms</dt><dd>TikTok &amp; Instagram</dd>
         <dt>Usage</dt><dd>Paid social &amp; whitelisting available</dd>
       </dl>
@@ -352,19 +348,14 @@ footer{border-top:1px solid var(--rule);padding:30px 0 46px;color:var(--ink-fain
 <hr class="rule">
 
 <section id="about">
-  <div class="wrap two">
+  <div class="wrap about-in">
     <div>
       <p class="eyebrow">About</p>
-      <h2 style="font-size:clamp(26px,4vw,40px);margin-top:12px;letter-spacing:-.02em">Real life, on camera.</h2>
+      <h2 style="font-size:clamp(26px,4vw,40px);margin-top:12px;letter-spacing:-.02em">A full house, run on systems.</h2>
     </div>
     <div>
-      <ul class="facts">
-        <li>Wife and mom of six</li>
-        <li>Homeschool mom</li>
-        <li>Dog mom to Rocket</li>
-        <li>Lifestyle and a busy life</li>
-        <li>Daily errands and fun adventures</li>
-      </ul>
+      <p class="intro">Wife and homeschooling mom of six, creating beauty and lifestyle content for moms who are done with survival mode.</p>
+      <div class="chips"><span>Mom of six</span><span>Homeschool</span><span>Beauty</span><span>Lifestyle</span><span>Samoan roots</span><span>Dog mom to Rocket</span></div>
     </div>
   </div>
 </section>
