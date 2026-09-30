@@ -171,6 +171,13 @@ section{padding:72px 0}
 .prose{color:var(--ink-soft);max-width:62ch}
 .prose strong{color:var(--ink)}
 
+/* brands strip */
+.worked{padding:26px 0;border-top:1px solid var(--rule)}
+.worked .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:14px 36px}
+.worked .eyebrow{flex-basis:100%;margin:0}
+@media (min-width:821px){.worked .eyebrow{flex-basis:auto;margin-right:12px}}
+.worked span.brand{font-family:"Fraunces",Georgia,serif;font-size:clamp(20px,2.6vw,26px);font-weight:600;letter-spacing:-.01em;color:var(--ink-soft)}
+
 /* about */
 .about-in{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
 @media (max-width:820px){.about-in{grid-template-columns:1fr;gap:18px}}
@@ -344,6 +351,16 @@ footer{border-top:1px solid var(--rule);padding:30px 0 46px;color:var(--ink-fain
     </aside>
   </div>
 </header>
+
+<div class="worked" aria-label="Brands I've worked with">
+  <div class="wrap">
+    <p class="eyebrow">Brands I've worked with</p>
+    <span class="brand">Naked Nutrition</span>
+    <span class="brand">Hiya</span>
+    <span class="brand">Dr. Woof</span>
+    <span class="brand">Bucked Up</span>
+  </div>
+</div>
 
 <hr class="rule">
 
