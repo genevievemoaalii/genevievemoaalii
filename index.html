@@ -1,3 +1,8 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Genevieve Moaalii, UGC creator in Utah. Beauty and lifestyle videos for paid social, filmed in a real home with a family of eight.">
 <title>Genevieve Moaalii</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -176,6 +181,16 @@ section{padding:72px 0}
 .about-list li{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;font-size:18px;color:var(--ink)}
 .about-list li::before{content:"";width:8px;height:8px;margin-top:10px;border-radius:2px;background:var(--accent)}
 .about-name{font-size:15px;font-weight:700;color:var(--ink-soft);margin-bottom:14px}
+
+/* phone readability */
+@media (max-width:480px){
+  body{font-size:17px}
+  .card-id dt,.cat .tag,.tile .ph{font-size:12px}
+  .tile .meta small{font-size:13px}
+  .reach .mail{font-size:17px;overflow-wrap:anywhere}
+  .included ul,.rate ul,.cat p{font-size:16px}
+  .about-list li{font-size:17px}
+}
 
 /* brands strip */
 .worked{padding:26px 0;border-top:1px solid var(--rule)}
