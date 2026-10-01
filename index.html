@@ -171,6 +171,12 @@ section{padding:72px 0}
 .prose{color:var(--ink-soft);max-width:62ch}
 .prose strong{color:var(--ink)}
 
+/* about list */
+.about-list{margin:0;padding:0;list-style:none;display:grid;gap:12px}
+.about-list li{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;font-size:18px;color:var(--ink)}
+.about-list li::before{content:"";width:8px;height:8px;margin-top:10px;border-radius:2px;background:var(--accent)}
+.about-name{font-size:15px;font-weight:700;color:var(--ink-soft);margin-bottom:14px}
+
 /* brands strip */
 .worked{padding:26px 0;border-top:1px solid var(--rule)}
 .worked .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:14px 36px}
@@ -370,11 +376,16 @@ footer{border-top:1px solid var(--rule);padding:30px 0 46px;color:var(--ink-fain
   <div class="wrap about-in">
     <div>
       <p class="eyebrow">About</p>
-      <h2 style="font-size:clamp(26px,4vw,40px);margin-top:12px;letter-spacing:-.02em">A full house, run on systems.</h2>
+      <h2 style="font-size:clamp(26px,4vw,40px);margin-top:12px;letter-spacing:-.02em">Products don't get staged here. They get survived.</h2>
     </div>
     <div>
-      <p class="intro">Wife and homeschooling mom of six, creating beauty and lifestyle content for moms who are done with survival mode.</p>
-      <div class="chips"><span>Mom of six</span><span>Homeschool</span><span>Beauty</span><span>Lifestyle</span><span>Samoan roots</span><span>Dog mom to Rocket</span></div>
+      <p class="about-name">I'm Genevieve Moaalii.</p>
+      <ul class="about-list">
+        <li>Samoan mom of six, homeschooling in Utah</li>
+        <li>Beauty and lifestyle UGC from a real Polynesian household of eight</li>
+        <li>Six kids and a German Shepherd named Rocket</li>
+        <li>Content built for your paid social</li>
+      </ul>
     </div>
   </div>
 </section>
