@@ -207,7 +207,8 @@ section{padding:72px 0}
 .chips span{font-size:14px;font-weight:600;padding:7px 14px;border-radius:999px;background:var(--accent-soft);color:var(--ink)}
 
 /* categories */
-.cats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media (max-width:1100px){.cats{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:820px){.cats{grid-template-columns:1fr}}
 .cat{
   background:var(--surface);border:1px solid var(--rule);border-radius:16px;
@@ -362,7 +363,7 @@ footer{border-top:1px solid var(--rule);padding:30px 0 46px;color:var(--ink-fain
       <div class="card-id">
       <dl>
         <dt>Based in</dt><dd>Utah, USA</dd>
-        <dt>Categories</dt><dd>Kids &amp; family, lifestyle, health &amp; beauty</dd>
+        <dt>Categories</dt><dd>Kids &amp; family, lifestyle, health &amp; beauty, pets</dd>
         <dt>Format</dt><dd>Face to camera and voiceover</dd>
         <dt>Kids on camera</dt><dd>Faces case by case</dd>
         <dt>Platforms</dt><dd>TikTok &amp; Instagram</dd>
@@ -432,6 +433,11 @@ footer{border-top:1px solid var(--rule);padding:30px 0 46px;color:var(--ink-fain
         <span class="tag">Health &amp; beauty</span>
         <h3>For the mom still figuring it out</h3>
         <p>Skincare, makeup, electrolytes, supplements. I talk to the woman who is starting over, not performing for people who already have it handled.</p>
+      </div>
+      <div class="cat">
+        <span class="tag">Pets</span>
+        <h3>One German Shepherd, six kids</h3>
+        <p>Food, treats, toys, gear. Rocket tests your product in a busy house, from muddy paws to backyard play and couch naps with the kids.</p>
       </div>
     </div>
   </div>
